@@ -1,0 +1,24 @@
+<div class="row">
+    <select [name]="name" [id]="id" #state (change)="this.writeValue(state.value)">
+      <option [value]="null">
+      {{display}}
+    </option>
+      <option 
+      *ngFor="let state of stateList | pagination: { rowCount: rowCount, pageCount: pageCount, selectedValue : value}" 
+      [value]="state.abbreviation" 
+      [selected]="state.abbreviation === value"
+      > 
+        {{state.name}}
+      </option>
+  </select> 
+</div>
+
+
+<br /><br />
+
+<div class="row">
+  <button type="button"  (click)="onClick(pageCount -1 )" >{{"Prev"}}</button>
+  <button type="button" (click)="onClick(pageCount + 1 )" >{{"Next"}}</button>
+</div>
+
+<br /><br />

@@ -1,0 +1,27 @@
+
+<label for="switch-1">NgModel</label>
+<br /><br />
+
+<app-custom-dropdown id="dp-1" [rowCount] = "4" [display]="'Seçiniz NGModel'" [stateList]="stateList" name="state" [(ngModel)]="value"></app-custom-dropdown>
+<strong >Value:</strong> {{value}}
+
+
+
+
+<br /><br />
+<hr />
+<br />
+
+
+
+
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+  <label for="switch-2">Reactive Forms</label>
+<br /><br />
+
+<app-custom-dropdown id="dp-2" [rowCount] = "7" [display]="'Seçiniz Reactive Form'" [stateList]="stateList" name="state" formControlName="myState"></app-custom-dropdown>
+  <button>Submit</button>
+
+<strong >Value:</strong> {{formValue}}
+
+</form>
